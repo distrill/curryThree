@@ -38,8 +38,8 @@
             text-align: center;
             padding: 7px;
             &:hover {
-                background: $logo-brown;
-                color: $logo-green;
+                background: $gray;
+                // color: $off-white;
             }
         }
     }
@@ -60,13 +60,16 @@
         width: auto;
         background: $front-bg;
         overflow: hidden;
+        padding-right: 20px;
+
         p {
             padding: 20px;
             font-size: 2em;
+            z-index: 9999;
             .date-right {
                 float: right;
                 font-size: 14px;
-                padding-right: 20px;
+                // padding-right: 20px;
             }
         }
         img {
@@ -102,9 +105,15 @@
 }
 
 .advertisement {
-    color: $off-white;
+    color: $black;
     text-align: center;
-    background: red;
+    width: 70%;
+    background: $warriors-gold;
+    margin: auto;
+    padding: 0.5em;
+    &:hover {
+        background: $warriors-bright-gold;
+    }
 }
 
 @media screen and ( max-width: $break-mid ) {

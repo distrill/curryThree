@@ -1,15 +1,11 @@
-var express = require( 'express' ),
-    morgan = require( 'morgan' );
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var app = express();
+var mongoose = require( './config/mongoose' ),
+    express = require( './config/express' ),
+    morgan = require( './config/mongoose' );
 
-app.use( morgan( 'dev' ) );
-
-app.set( 'views', './app/views' );
-app.set( 'view engine', 'ejs' );
-app.use( express.static( './public' ));
-
-require( './app/routes/index.server.routes.js' )( app );
+var db = mongoose(),
+    app = express( db );
 
 app.listen( 3030, '127.0.0.1' );
 

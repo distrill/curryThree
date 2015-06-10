@@ -3,11 +3,23 @@ $break-small:   500px;
 
 $bright-white: #fff;
 $off-white: #eee;
-$logo-brown: #43331a;
-$logo-green: #bdc842;
 $gray: #bbbdbe;
 $invisible-brown: #47371e;
+$black: #111;
 
-$mid-bg: $logo-brown;
+// green and brown color scheme
+$logo-brown: #43331a;
+$logo-green: #bdc842;
+
+// blue and gold warriors color scheme
+$warriors-blue: #0146ad;
+$warriors-gold: #f8c536;
+$warriors-bright-gold: #ffcd3e;
+
+
+// hot swap for easier theme change without wrong names
+$mid-bg: $warriors-blue;
 $front-bg: $off-white;
-$font-color: $logo-brown;
+$back-bg: $gray;
+
+$font-color: $black;
