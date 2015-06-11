@@ -7,6 +7,6 @@ var mongoose = require( './config/mongoose' ),
 var db = mongoose(),
     app = express( db );
 
-app.listen( 3030, '127.0.0.1' );
+app.listen( 8080, '127.0.0.1' );
 
 console.log( 'temp app running at http://localhost:3030/' );

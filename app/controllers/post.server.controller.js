@@ -26,7 +26,7 @@ exports.create = function( req, res, next ) {
                 message: getErrorMessage( err )
             });
         } else {
-            res.redirect( '/staging' );
+            res.redirect( '/' );
         }
     });
 };
@@ -46,7 +46,7 @@ exports.update = function( req, res ) {
                 message: getErrorMessage( err )
             });
         } else {
-            res.redirect( '/staging' );
+            res.redirect( '/' );
         }
     })
 }
@@ -59,7 +59,7 @@ exports.delete = function( req, res ) {
                 message: getErrorMessage( err )
             });
         } else {
-            res.redirect( '/staging' );
+            res.redirect( '/' );
         }
     })
 }
