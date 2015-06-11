@@ -1,6 +1,7 @@
 var config = require( './config' ),
     configMulter = require( '../config/multer.js' ),
     express = require( 'express' ),
+    methodOverride = require( 'method-override' ),
     morgan = require( 'morgan' ),
     multer = require( 'multer' );
 
@@ -10,6 +11,7 @@ module.exports = function( db ) {
     app.use( morgan( 'dev' ) );
 
     app.use( multer( configMulter.settings ));
+    app.use( methodOverride( 'X-HTTP-Method-Override' ) );
 
     app.set( 'views', './app/views' );
     app.set( 'view engine', 'ejs' );

@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet.css"/>
 		<title>Curry THREE</title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 		<div class="page-container">
 
 			<div class="wide-container">
-				<img src="img/temp-logo2.png" class="logo-img">
+				<img src="../../img/temp-logo2.png" class="logo-img">
 				<div class="divider"></div>
 				<nav id="navbar" class="navbar">
 					<ul>
@@ -40,17 +40,17 @@
 				</nav>
 			</div>
 
-			<div class="new-post-main-content">
-				<h2>New Post</h2>
-				<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
-					<textarea name="title" class="post-body-input pbi-title" placeholder="title"></textarea>
-					<textarea name="body" class="post-body-input pbi-body" placeholder="body"></textarea><br>
-					<textarea name="link" class="post-body-input pbi-title" placeholder="link"></textarea><br><br>
-					<p>photo upload</p>
-					<input type="file" name="postThumbnail" class="photo-upload"><br><br><br>
-					<input type="submit" value="Submit" class="upload-form-submit">
-				</form>
-			</div>
+            <div class="remove form">
+                <div class="new-post-main-content">
+                    <h2>Are you sure you want to delete this post?<br>
+                    	This cannot be undone.<br><br></h2>
+					<h3><%= post.title %><br>
+						<img src="../../../img/postThumbnails/<%= post.thumbnail %>" class="remove-image"><br>
+                    <form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
+                        <input type="submit" value="Remove Post" class="upload-form-submit">
+                    </form>
+                </div>
+            </div>
 
 			<div class="wide-container">
 				<div class="footer">
@@ -58,7 +58,6 @@
 				</div>
 			</div>
 
-		</div>
-
-	</body>
+        </div>
+    </body>
 </html>

@@ -9,7 +9,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
 		<title>Curry THREE</title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 		<div class="page-container">
 
 			<div class="wide-container">
-				<img src="img/temp-logo2.png" class="logo-img">
+				<img src="../img/temp-logo2.png" class="logo-img">
 				<div class="divider"></div>
 				<nav id="navbar" class="navbar">
 					<ul>
@@ -41,14 +41,16 @@
 			</div>
 
 			<div class="new-post-main-content">
-				<h2>New Post</h2>
+				<h2>Edit Post</h2>
 				<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
-					<textarea name="title" class="post-body-input pbi-title" placeholder="title"></textarea>
-					<textarea name="body" class="post-body-input pbi-body" placeholder="body"></textarea><br>
-					<textarea name="link" class="post-body-input pbi-title" placeholder="link"></textarea><br><br>
-					<p>photo upload</p>
-					<input type="file" name="postThumbnail" class="photo-upload"><br><br><br>
-					<input type="submit" value="Submit" class="upload-form-submit">
+					<textarea name="title" class="post-body-input pbi-title"><%= post.title %></textarea>
+					<textarea name="body" class="post-body-input pbi-body"><%= post.body %></textarea><br>
+					<!-- <input type="text" name="body" placeholder="body" class="post-body-input"><br> -->
+					<input type="text" name="link" value="<%= post.link %>"><br>
+					<img src="../img/postThumbnails/<%= post.thumbnail %>">
+					<p>new photo? (empty to keep same photo)</p>
+					<input type="file" name="postThumbnail" formenctype="multipart/form-data"><br><br>
+					<input type="submit" value="update" class="upload-form-submit">
 				</form>
 			</div>
 
@@ -62,3 +64,12 @@
 
 	</body>
 </html>
+
+<!--	<body>
+		date: <%= post.date %><br>
+		title: <%= post.title %><br><br>
+		body: <%= post.body %><br><br>
+		link: <%= post.link %><br>
+		ID: <%= post._id %><br>
+    </body>
+</html> -->

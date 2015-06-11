@@ -1,0 +1,27 @@
+@import 'variables';
+
+@media screen and ( max-width: $break-mid ) {
+    .page-container {
+        width:  83%;
+    }
+    .content-container {
+        .news-elem {
+            padding: 20px;
+            img {
+                width: 96%;
+                margin: 2%;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: $break-small ) {
+    .page-container {
+        width:  95%;
+    }
+    .news-elem {
+        .copy {
+            padding-right: 0;
+        }
+    }
+}

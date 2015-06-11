@@ -1,25 +1,5 @@
 @import 'variables';
 
-.page-container {
-    width:      70%;
-    max-width:  1100px;
-    margin:     auto;
-    margin-top: 7px;
-    position: relative;
-    border-radius: 2.5px;
-    img {
-        width: 100%;
-        background: $front-bg;
-    }
-}
-
-.wide-container {
-    font-size: 0;
-    background: $mid-bg;
-    margin: -15px;
-    padding: 15px;
-}
-
 .navbar {
     background: $front-bg;
     ul {
@@ -61,7 +41,7 @@
         background: $front-bg;
         overflow: hidden;
         padding-right: 20px;
-
+        position: relative;
         p {
             padding: 20px;
             font-size: 2em;
@@ -81,6 +61,12 @@
         .copy {
             padding-right: 20px;
         }
+        .post-remove-edit {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            text-align: right;
+        }
         &:after {
             content: "";
             display: table;
@@ -89,18 +75,6 @@
         &:hover {
             background-color: $bright-white;
         }
-    }
-}
-
-.footer{
-    font-size: 1rem;
-    padding: 0.5rem 20px;
-    text-align: left;
-    background: $off-white;
-    color: $font-color;
-    margin-bottom: -15px;
-    .foot-right {
-        float: right;
     }
 }
 
@@ -113,31 +87,5 @@
     padding: 0.5em;
     &:hover {
         background: $warriors-bright-gold;
-    }
-}
-
-@media screen and ( max-width: $break-mid ) {
-    .page-container {
-        width:  83%;
-    }
-    .content-container {
-        .news-elem {
-            padding: 20px;
-            img {
-                width: 96%;
-                margin: 2%;
-            }
-        }
-    }
-}
-
-@media screen and ( max-width: $break-small ) {
-    .page-container {
-        width:  95%;
-    }
-    .news-elem {
-        .copy {
-            padding-right: 0;
-        }
     }
 }
