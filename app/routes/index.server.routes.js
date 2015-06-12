@@ -5,6 +5,6 @@ module.exports = function( app ) {
     app .route( '/' )
         .get( index.render );
 
-    // app .route( '/staging' )
-    //     .get( index.renderStaging );
+    app .route( '/staging' )
+        .get( index.renderStaging );
 }

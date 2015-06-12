@@ -2,10 +2,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var mongoose = require( './config/mongoose' ),
     express = require( './config/express' ),
-    morgan = require( './config/mongoose' );
+    passport = require( './config/passport' );
 
-var db = mongoose(),
-    app = express( db );
+var db = mongoose();
+var app = express( db );
+var passport = passport();
 
 app.listen( 8080, '127.0.0.1' );
 

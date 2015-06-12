@@ -1,3 +1,4 @@
 module.exports = {
-    db: 'mongodb://localhost/curry-three'
+    db: 'mongodb://localhost/curry-three',
+    sessionSecret: 'developmentSessionSecret'
 };

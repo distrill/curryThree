@@ -17,6 +17,10 @@ var post = require( 'mongoose' ).model( 'Post' );
 
 
 exports.render = function( req, res ) {
+    if( req.session.lastVisit ) {
+        console.log( 'Previous Session:\n' + req.session.lastVisit );
+    }
+    req.session.lastVisit = new Date();
     post.find( {} ).find( function( err, postResults ) {
         if( err ) {
             console.log( 'ERROR index.server.controller.js: ' + err );
@@ -31,4 +35,8 @@ exports.render = function( req, res ) {
             });
         }
     });
+}
+
+exports.renderStaging = function( req, res ) {
+    res.render( 'staging', {} );
 }

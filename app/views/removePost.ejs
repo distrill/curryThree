@@ -1,44 +1,11 @@
 <!DOCTYPE html>
-<!--
-
-    author:         arthurKN (2015)
-    checkit:		http://github.com/distrill
-
--->
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet.css"/>
-		<title>Curry THREE</title>
-	</head>
+	<% include /partials/head %>
 	<body>
 
 		<div class="page-container">
 
-			<div class="wide-container">
-				<img src="../../img/temp-logo2.png" class="logo-img">
-				<div class="divider"></div>
-				<nav id="navbar" class="navbar">
-					<ul>
-						<a href="#"><li>
-							one
-						</li></a>
-						<a href="#"><li>
-							two
-						</li></a>
-						<a href="#"><li>
-							three
-						</li></a>
-						<a href="#"><li>
-							four
-						</li></a>
-						<a href="/newPost"><li>
-							new post
-						</li></a>
-					</ul>
-				</nav>
-			</div>
+			<% include /partials/header %>
 
             <div class="remove form">
                 <div class="new-post-main-content">
@@ -52,11 +19,7 @@
                 </div>
             </div>
 
-			<div class="wide-container">
-				<div class="footer">
-					<a href="#">contact us</a><a href="#"><span class="foot-right">advertise with us</span></a>
-				</div>
-			</div>
+			<% include /partials/footer %>
 
         </div>
     </body>
