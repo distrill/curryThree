@@ -93,7 +93,7 @@ exports.delete = function( req, res ) {
                 throw err;
             }
             console.log( 'successfully deleted /public/img/postThumbnails/' + post.thumbnail );
-        } );
+        });
         post.remove( function( err ) {
             if( err ) {
                 return res.status( 400 ).send( {
