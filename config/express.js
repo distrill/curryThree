@@ -1,7 +1,7 @@
-var config = require( './config' ),
+var bodyParser = require( 'body-parser' ),
+    config = require( './config' ),
     configMulter = require( '../config/multer.js' ),
     express = require( 'express' ),
-    // methodOverride = require( 'method-override' ),
     morgan = require( 'morgan' ),
     multer = require( 'multer' ),
     passport = require( 'passport' ),
@@ -12,11 +12,15 @@ module.exports = function( db ) {
 
     app.use( morgan( 'dev' ) );
 
+    app.use( bodyParser.urlencoded( {
+        extended: true
+    }));
+    app.use( bodyParser.json() );
     app.use( multer( configMulter.settings ));
     // app.use( methodOverride( 'X-HTTP-Method-Override' ) );
 
     app.use( session( {
-        saveUninitiallized: true,
+        saveUninitialized: true,
         resave: true,
         secret: config.sessionSecret
     }));

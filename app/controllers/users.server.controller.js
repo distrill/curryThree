@@ -1,20 +1,54 @@
 var User = require( 'mongoose' ).model( 'User' );
 
 exports.renderStaging = function( req, res ) {
-    res.render( 'staging', {} );
+    console.log( req.session );
+    res.render( 'staging', {
+        admin: ( req.session.passport.user ) ? true : false
+    });
+}
+
+exports.renderSignin = function( req, res ) {
+    if( req.session.passport.user ) {
+        res.redirect( 'signout' );
+    } else {
+        res.render( 'signin', {
+            messages: {},
+            admin: false
+        });
+    }
+}
+
+exports.renderSignout = function( req, res ) {
+    if( req.session.passport.user ) {
+        res.render( 'signout', {
+            admin: true
+        });
+    } else {
+        res.redirect( '/' );
+    }
 }
 
 exports.create = function( req, res, next ) {
-    var newUser = new User( req.body );
-    newUser.save( function( err ) {
-        if( err ) {
-            return res.status( 400 ).send( {
-                message: getErrorMessage( err )
-            });
-        } else {
-            console.log( newUser );
-        }
-    });
+    if( req.session.passport.user ) {
+        var newUser = new User( req.body );
+        newUser.save( function( err ) {
+            if( err ) {
+                return res.status( 400 ).send( {
+                    message: getErrorMessage( err )
+                });
+            } else {
+                console.log( newUser );
+                res.redirect( '/' );
+            }
+        });
+    } else {
+        redirect( '/signin' );
+    }
+};
+
+exports.signout = function( req, res ) {
+    req.logout();
+    res.redirect( '/' );
 };
 
 exports.userByID = function( req, res, next, id ) {

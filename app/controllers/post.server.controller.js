@@ -1,67 +1,111 @@
-var Post = require( 'mongoose' ).model( 'Post' );
+var Post = require( 'mongoose' ).model( 'Post' ),
+    fs = require( 'fs' );
 
 exports.renderNewPost = function( req, res ) {
-    res.render( 'newPost', {} );
+    if( req.session.passport.user ) {
+        console.log( req.session );
+        res.render( 'newPost', {
+            admin: true
+        });
+    } else {
+        res.redirect( '/signin' );
+    }
 };
 
 exports.renderEditPost = function( req, res ) {
-    res.render( 'editPost', {
-        post: req.post
-    });
+    if( req.session.passport.user ) {
+        res.render( 'editPost', {
+            post: req.post,
+            admin: true
+        });
+    } else {
+        res.redirect( '/' );
+    }
 };
 
 exports.renderRemovePost = function( req, res ) {
-    res.render( 'removePost', {
-        post: req.post
-    });
+    if( req.session.passport.user ) {
+        res.render( 'removePost', {
+            post: req.post,
+            admin: true
+        });
+    } else {
+        res.redirect( '/' );
+    }
 };
 
 /**                  CRUD                        **/
 exports.create = function( req, res, next ) {
-    var newPost = new Post( req.body );
-    newPost.thumbnail = req.files.postThumbnail.name;
-    newPost.save( function( err ) {
-        if( err ) {
-            return res.status( 400 ).send( {
-                message: getErrorMessage( err )
-            });
-        } else {
-            res.redirect( '/' );
-        }
-    });
+    if( req.session.passport.user ) {
+        var newPost = new Post( req.body );
+        newPost.thumbnail = req.files.postThumbnail.name;
+        newPost.save( function( err ) {
+            if( err ) {
+                return res.status( 400 ).send( {
+                    message: getErrorMessage( err )
+                });
+            } else {
+                res.redirect( '/' );
+            }
+        });
+    } else {
+        res.redirect( '/' );
+    }
 };
 
 exports.update = function( req, res ) {
-    var post = req.post;
-    post.title = req.body.title;
-    post.body = req.body.body;
-    post.link = req.body.link;
-    if( typeof req.files.postThumbnail !== 'undefined' ) {
-        post.thumbnail = req.files.postThumbnail.name;
-    } else {
-    }
-    post.save( function( err ) {
-        if( err ) {
-            return res.status( 400 ).send( {
-                message: getErrorMessage( err )
-            });
+    if( req.session.passport.user ) {
+        var post = req.post;
+        post.title = req.body.title;
+        post.body = req.body.body;
+        post.link = req.body.link;
+        if( typeof req.files.postThumbnail !== 'undefined' ) {
+            // console.log( 'public/img/postThumbnails/' + post.thumbnail );
+            fs.unlink( ( 'public/img/postThumbnails/' + post.thumbnail ), function( err ) {
+                if( err ) {
+                    throw err;
+                }
+                console.log( 'successfully deleted /public/img/postThumbnails/' + post.thumbnail );
+            } );
+            post.thumbnail = req.files.postThumbnail.name;
         } else {
-            res.redirect( '/' );
         }
-    })
+        post.save( function( err ) {
+            if( err ) {
+                return res.status( 400 ).send( {
+                    message: getErrorMessage( err )
+                });
+            } else {
+                res.redirect( '/' );
+            }
+        })
+    } else {
+        res.redirect( '/' );
+    }
 }
 
 exports.delete = function( req, res ) {
-    var article = req.post;
-    article.remove( function( err ) {
-        if( err ) {
-            return res.status( 400 ).send( {
-                message: getErrorMessage( err )
-            });
-        } else {
-            res.redirect( '/' );
-        }
-    })
+    if( req.session.passport.user ) {
+        var post = req.post;
+        console.log( post );
+        fs.unlink( ( 'public/img/postThumbnails/' + post.thumbnail ), function( err ) {
+            if( err ) {
+                throw err;
+            }
+            console.log( 'successfully deleted /public/img/postThumbnails/' + post.thumbnail );
+        } );
+        post.remove( function( err ) {
+            if( err ) {
+                return res.status( 400 ).send( {
+                    message: getErrorMessage( err )
+                });
+            } else {
+                res.redirect( '/' );
+            }
+        })
+    } else {
+        res.redirect( '/' );
+    }
 }
 
 exports.postByID = function( req, res, next, id ) {

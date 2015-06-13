@@ -1,29 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<% include /partials/head %>
-	<body>
-
-		<div class="page-container">
-
-			<% include /partials/header %>
-
-			<div class="new-post-main-content">
-				<h2>Edit Post</h2>
-				<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
-					<textarea name="title" class="post-body-input pbi-title"><%= post.title %></textarea>
-					<textarea name="body" class="post-body-input pbi-body"><%= post.body %></textarea><br>
-					<!-- <input type="text" name="body" placeholder="body" class="post-body-input"><br> -->
-					<input type="text" name="link" value="<%= post.link %>"><br>
-					<img src="../img/postThumbnails/<%= post.thumbnail %>">
-					<p>new photo? (empty to keep same photo)</p>
-					<input type="file" name="postThumbnail" formenctype="multipart/form-data"><br><br>
-					<input type="submit" value="update" class="upload-form-submit">
-				</form>
-			</div>
-
-			<% include /partials/footer %>
-
-		</div>
-
-	</body>
-</html>
+<% include /metaPartials/top %>
+<div class="new-post-main-content">
+	<h2>Edit Post</h2>
+	<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
+		<textarea name="title" class="post-body-input pbi-title"><%= post.title %></textarea>
+		<textarea name="body" class="post-body-input pbi-body"><%= post.body %></textarea><br>
+		<!-- <input type="text" name="body" placeholder="body" class="post-body-input"><br> -->
+		<input type="text" name="link" value="<%= post.link %>"><br>
+		<img src="../img/postThumbnails/<%= post.thumbnail %>">
+		<p>new photo? (empty to keep same photo)</p>
+		<input type="file" name="postThumbnail" formenctype="multipart/form-data"><br><br>
+		<input type="submit" value="update" class="upload-form-submit">
+	</form>
+</div>
+<% include /metaPartials/bottom %>

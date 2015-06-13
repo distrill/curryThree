@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<% include /partials/head %>
-	<body>
+<% include /metaPartials/top %>
+<div class="content-container">
 
-		<div class="page-container">
+	<form method="post" enctype="multipart/form-data">
+		<input type="text" name="username" placeholder="username">
+		<input type="text" name="password" placeholder="password">
+		<input type="submit">
+	</form>
 
-			<% include /partials/header %>
-
-			<div class="content-container">
-
-				<form method="post" enctype="multipart/form-data">
-					<input type="text" name="username" placeholder="username">
-					<input type="text" name="password" placeholder="password">
-					<input type="submit">
-				</form>
-
-			</div>
-
-			<% include /partials/footer %>
-
-		</div>
-
-	</body>
-</html>
+</div>
+<% include /metaPartials/bottom %>

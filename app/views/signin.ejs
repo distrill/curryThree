@@ -1,0 +1,15 @@
+<% include /metaPartials/top %>
+<% for( var i in messages ) { %>
+	<div class="flash"><%= messages[ i ] %></div>
+<% } %>
+<div class="new-post-main-content">
+	<h2>Admin</h2>
+	<form action="/signin" method="post" class="new-post-form">
+		<label>username</label><br>
+		<input type="text" name="username"><br><br>
+		<label>password</label><br>
+		<input type="password" name="password" label="password"><br><br><br>
+		<input type="submit" value="Submit" class="upload-form-submit">
+	</form>
+</div>
+<% include /metaPartials/bottom %>

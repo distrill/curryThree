@@ -1,5 +1,9 @@
 @import 'variables';
 
+textarea {
+    padding: 0.25em 0.5em;
+}
+
 .new-post-form {
     text-align: center;
     input {
@@ -26,7 +30,7 @@
     }
     .upload-form-submit {
         padding: 0.5em;
-        margin-bottom: 5em;
+        // margin-bottom: 5em;
     }
 }
 

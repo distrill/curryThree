@@ -8,6 +8,8 @@ var db = mongoose();
 var app = express( db );
 var passport = passport();
 
-app.listen( 8080, '127.0.0.1' );
+app.listen( 3030, '127.0.0.1' );
+
+// module.exports = app;
 
 console.log( 'temp app running at http://localhost:3030/' );

@@ -10,7 +10,7 @@ var UserSchema = new Schema( {
     },
     provider: {
         type: String,
-        required: 'Provider is required'
+        default: 'local'
     },
     providerId: String,
     providerData: {},
@@ -18,8 +18,7 @@ var UserSchema = new Schema( {
 
 UserSchema.pre( 'save', function( next ) {
     if( this.password ) {
-        this.salt = new
-            Buffer( crypto.randomBytes( 16 ).toString( 'base64' ), 'base64' );
+        this.salt = new Buffer( crypto.randomBytes( 16 ).toString( 'base64' ), 'base64' );
         this.password = this.hashPassword( this.password );
     }
     next();

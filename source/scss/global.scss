@@ -18,17 +18,19 @@
 
 html, body {
     // width: 100%;
-    // height: 100%;
+    height: 100%;
     background: $back-bg;
 }
 
-
+label {
+    color: $off-white;
+}
 
 .page-container {
     width:      70%;
     max-width:  1100px;
     margin:     auto;
-    margin-top: 7px;
+    // margin-top: 7px;
     position: relative;
     border-radius: 2.5px;
     img {
@@ -44,10 +46,26 @@ html, body {
     padding: 15px;
 }
 
+.header-padding {
+    padding-top: 22px;
+}
+
 .divider {
     width: 100%;
     height: 1px;
     background: $logo-brown;
+}
+
+.footer-push {
+    min-height: 100vh;
+    margin-bottom: -2rem;
+    background: $warriors-blue;
+    &:after {
+        content: "";
+        display: block;
+        height: 2rem;
+        // background: red;
+    }
 }
 
 .footer{

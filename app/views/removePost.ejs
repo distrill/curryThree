@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<% include /partials/head %>
-	<body>
-
-		<div class="page-container">
-
-			<% include /partials/header %>
-
-            <div class="remove form">
-                <div class="new-post-main-content">
-                    <h2>Are you sure you want to delete this post?<br>
-                    	This cannot be undone.<br><br></h2>
-					<h3><%= post.title %><br>
-						<img src="../../../img/postThumbnails/<%= post.thumbnail %>" class="remove-image"><br>
-                    <form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
-                        <input type="submit" value="Remove Post" class="upload-form-submit">
-                    </form>
-                </div>
-            </div>
-
-			<% include /partials/footer %>
-
-        </div>
-    </body>
-</html>
+<% include /metaPartials/top %>
+<div class="remove form">
+    <div class="new-post-main-content">
+        <h2>Are you sure you want to delete this post?<br>
+        	This cannot be undone.<br><br></h2>
+		<h3><%= post.title %><br>
+			<img src="../../../img/postThumbnails/<%= post.thumbnail %>" class="remove-image"><br>
+        <form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
+            <input type="submit" value="Remove Post" class="upload-form-submit">
+        </form>
+    </div>
+</div>
+<% include /metaPartials/bottom %>

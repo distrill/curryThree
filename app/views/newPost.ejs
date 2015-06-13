@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<% include /partials/head %>
-	<body>
-
-		<div class="page-container">
-
-			<% include /partials/header %>
-
-			<div class="new-post-main-content">
-				<h2>New Post</h2>
-				<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
-					<textarea name="title" class="post-body-input pbi-title" placeholder="title"></textarea>
-					<textarea name="body" class="post-body-input pbi-body" placeholder="body"></textarea><br>
-					<textarea name="link" class="post-body-input pbi-title" placeholder="link"></textarea><br><br>
-					<p>photo upload</p>
-					<input type="file" name="postThumbnail" class="photo-upload"><br><br><br>
-					<input type="submit" value="Submit" class="upload-form-submit">
-				</form>
-			</div>
-
-			<% include /partials/footer %>
-
-		</div>
-
-	</body>
-</html>
+<% include /metaPartials/top %>
+<div class="new-post-main-content">
+	<h2>New Post</h2>
+	<form id="uploadForm" enctype="multipart/form-data" action="" method="post" class="new-post-form">
+		<textarea name="title" class="post-body-input pbi-title" placeholder="title"></textarea>
+		<textarea name="body" class="post-body-input pbi-body" placeholder="body"></textarea><br>
+		<textarea name="link" class="post-body-input pbi-title" placeholder="link"></textarea><br><br>
+		<p>photo upload</p>
+		<input type="file" name="postThumbnail" class="photo-upload"><br><br><br>
+		<input type="submit" value="Submit" class="upload-form-submit">
+	</form>
+</div>
+<% include /metaPartials/bottom %>
