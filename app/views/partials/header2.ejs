@@ -1,0 +1,29 @@
+<div class="wide-container header-padding">
+                <!-- <img src="/img/temp-logo2.png" class="logo-img"> -->
+                <!-- <div class="divider"></div> -->
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <a href="/"><li>
+                            home
+                        </li></a>
+                        <a href="#"><li>
+                            two
+                        </li></a>
+                        <a href="#"><li>
+                            three
+                        </li></a>
+                        <a href="/newPost"><li>
+                            new post
+                        </li></a>
+                        <% if( admin ) { %>
+                        <a href="/signout"><li>
+                            signout
+                        </li></a>
+                        <% } else { %>
+                        <a href="/signin"><li>
+                            admin
+                        </li></a>
+                        <% } %>
+                    </ul>
+                </nav>
+            </div>

@@ -1,0 +1,32 @@
+@import 'variables';
+
+.not-carousel {
+    // width: 100%;
+    height: 400px;
+    margin: 15px;
+    background: $bright-white;
+    position: relative;
+    font-size: 0;
+    .elem {
+        width: 16.66%;
+        height: 100%;
+        background: red;
+        display: inline-block;
+        &:hover {
+            background: black;
+        }
+    }
+}
+
+.staging-main-content-container {
+    width: 85%;
+    float: left;
+}
+
+.ad-column {
+    // float: right;
+    width: 100px;
+    height: 100px;
+    background: green;
+    z-index: 99989;
+}

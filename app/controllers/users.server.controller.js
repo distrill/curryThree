@@ -29,7 +29,7 @@ exports.renderSignout = function( req, res ) {
 }
 
 exports.create = function( req, res, next ) {
-    if( req.session.passport.user ) {
+    // if( req.session.passport.user ) {
         var newUser = new User( req.body );
         newUser.save( function( err ) {
             if( err ) {
@@ -41,9 +41,9 @@ exports.create = function( req, res, next ) {
                 res.redirect( '/' );
             }
         });
-    } else {
-        redirect( '/signin' );
-    }
+    // } else {
+    //     redirect( '/signin' );
+    // }
 };
 
 exports.signout = function( req, res ) {

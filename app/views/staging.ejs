@@ -1,11 +1,49 @@
-<% include /metaPartials/top %>
+<% include /metaPartials/top2 %>
 <div class="content-container">
 
-	<form method="post" enctype="multipart/form-data">
-		<input type="text" name="username" placeholder="username">
-		<input type="text" name="password" placeholder="password">
-		<input type="submit">
-	</form>
+
+        <div class="ad-column">
+            what the heck
+        </div>
+        
+    <div class="not-carousel">
+        <div class="elem nce-1">
+        </div>
+        <div class="elem nce-2">
+        </div>
+        <div class="elem nce-3">
+        </div>
+        <div class="elem nce-4">
+        </div>
+        <div class="elem nce-5">
+        </div>
+        <div class="elem nce-6">
+        </div>
+    </div>
+
+
+    <div class="staging-main-content-container">
+    <%	for( var i in posts ) { %>
+        <div class="news-elem">
+            <p><a href="<%= posts[ i ].link %>"><%= posts[ i ].title %></a><span class="date-right">
+                <%= posts[ i ].date.toString().split( ' ' ).slice( 1, 3 ).join( ' ' ) + ', ' +
+                    posts[ i ].date.toString().split( ' ' ).slice( 3, 4 ) %>
+            </span></p>
+            <a href="<%= posts[ i ].link %>">
+                <img src="img/postThumbnails/<%= posts[ i ].thumbnail %>" class="news-elem-img">
+            </a>
+            <span class="copy"><%= posts[ i ].body %></span><br><br><br><br>
+            <% if( admin ) { %>
+                <div class="post-remove-edit">
+                    <a href="post/<%=posts[ i ]._id %>">edit</a><br>
+                    <a href="post/remove/<%= posts[ i ]._id %>">remove</a>
+                </div>
+            <% } %>
+        </div>
+    <% 	} %>
+    </div>
+
+
 
 </div>
 <% include /metaPartials/bottom %>
