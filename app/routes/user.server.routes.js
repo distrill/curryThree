@@ -19,5 +19,9 @@ module.exports = function( app ) {
     app .route( '/signout' )
         .get( users.signout );
 
+    // app .route( '/signup' )
+    //     .get( users.renderSignup )
+    //     .post( users.create );
+
     app .param( 'userID', users.userByID );
 }

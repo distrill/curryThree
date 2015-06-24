@@ -2,31 +2,139 @@
 
 .not-carousel {
     // width: 100%;
-    height: 400px;
-    margin: 15px;
+    height: 500px;
+    // margin: 15px;
     background: $bright-white;
     position: relative;
     font-size: 0;
     .elem {
-        width: 16.66%;
+
+        width: 20%;
         height: 100%;
+        // width: 100%;
+        // height: 100px;
         background: red;
         display: inline-block;
+        position: relative;
+        overflow: hidden;
+        filter: saturate(30%);
+        // .img {
+        //     height: 100%;
+        // }
+        background-size: cover;
+        // background-color: black;
+        // opacity: 0.7;
         &:hover {
-            background: black;
+            opacity: 1;
+            filter: saturate( 100% );
+            // position: absolute;
+            // left: 0;
+            // z-index: 9999;
+            // width: 100%;
         }
+    }
+    .elem-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.5;
+        // filter: saturate(30%);
+        &:hover {
+            opacity: 0;
+        }
+    }
+    .nce-1 {
+        background: url( '../img/tops/one.jpg' );
+        background-size: cover;
+        // position: absolute;
+        background-position: center;
+    }
+    .nce-2 {
+        background: url( '../img/tops/two.jpg' );
+        background-size: cover;
+        background-position: center;
+    }
+    .nce-3 {
+        background: url( '../img/tops/three.jpg' );
+        background-size: cover;
+        background-position: center;
+    }
+    .nce-4 {
+        background: url( '../img/tops/four.jpg' );
+        background-size: cover;
+        background-position: center;
+    }
+    .nce-5 {
+        background: url( '../img/tops/five.jpg' );
+        background-size: cover;
+        background-position: center;
+    }
+    .nce-6 {
+        background: url( '../img/tops/six.jpg' );
+        background-size: cover;
+        background-position: center;
     }
 }
 
 .staging-main-content-container {
-    width: 85%;
+    width: 80%;
     float: left;
 }
 
-.ad-column {
+.ad-fuck {
     // float: right;
-    width: 100px;
-    height: 100px;
-    background: green;
-    z-index: 99989;
+    width: 20%;
+    // height: 600px;
+    // padding-right: 15px;
+    border-left: solid 15px white;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 0;
+    // background: $front-bg;
+    // z-index: 99989;
+    // border-right: solid 15px $warriors-blue;
+    img {
+        width: 100%;
+        margin-bottom: 15px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
+
+.staging-logo {
+    height: 100px;
+    width: auto;
+    max-width: 100%;
+}
+
+.tagline {
+    font-size: 2rem;
+    // background: red;
+    // display: inline-block;
+    position: absolute;
+
+    // padding-bottom: 20px;``
+    line-height: 100px;
+}
+
+.news-elem-right {
+    padding: 20px;
+    padding-bottom: 40px;
+
+    // overflow: hidden;
+}
+
+// .ad-column {
+//     float: right;
+//     width: 100px;
+//     height: 100px;
+//     background: green;
+//     z-index: 99989;
+// }

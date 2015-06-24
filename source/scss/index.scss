@@ -2,40 +2,57 @@
 
 .content-container {
     width: 100%;
+    height: 100%;
     // height: 2000px;
     // padding-bottom: 0px;
     // margin-bottom: -20px;
-    background: $mid-bg;
+    // background: $mid-bg;
     // a {
     //     text-decoration: none;
     //     color: $font-color;
     // }
-    overflow: auto;
+    // display: flex;
+    // overflow: auto;
+    content: "";
+    display: table;
+    clear: both;
     .news-elem {
-        margin: 15px;
+        // margin: 15px;
+        margin-top: 15px;
+        // padding: 20px;
+        height: 200px;
         width: auto;
         background: $front-bg;
         overflow: hidden;
-        padding-right: 20px;
+        // padding-right: 20px;
         position: relative;
+        .date-right {
+            float: right;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-top: 5px;
+            // padding-right: 20px;
+        }
         p {
-            padding: 20px;
+            // padding: 20px;
+            margin-left: 305px;
             font-size: 2em;
             z-index: 9999;
-            .date-right {
-                float: right;
-                font-size: 14px;
-                // padding-right: 20px;
-            }
         }
         img {
             float: left;
-            width: 25%;
-            margin: 20px;
-            margin-top: 0px;
+            height: 200px;
+            width: 300px;
+            // width: 25%;
+            // margin: 20px;
+            // margin-top: 0px;
         }
         .copy {
-            padding-right: 20px;
+            padding: 20px;
+            margin-left: 300px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-bottom: solid 4px black;
         }
         .post-remove-edit {
             position: absolute;
@@ -51,9 +68,9 @@
         &:hover {
             background-color: $bright-white;
         }
-        &:first-of-type {
-            margin-top: 0;
-        }
+        // &:first-of-type {
+        //     margin-top: 0;
+        // }
         &:last-of-type {
             margin-bottom: 0;
         }

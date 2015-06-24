@@ -17,7 +17,7 @@
 }
 
 html, body {
-    width: 100%;
+    // width: 100%;
     height: 100%;
     background: $back-bg;
 }
@@ -34,20 +34,20 @@ label {
     position: relative;
     border-radius: 2.5px;
     img {
-        width: 100%;
-        background: $front-bg;
+        // width: 100%;
+        // background: $front-bg;
     }
 }
 
-.wide-container {
-    font-size: 0;
-    background: $mid-bg;
-    margin: -15px;
-    padding: 15px;
-}
+// .wide-container {
+//     font-size: 0;
+//     background: $mid-bg;
+//     margin: -15px;
+//     padding: 15px;
+// }
 
 .header-padding {
-    padding-top: 22px;
+    // padding-top: 22px;
 }
 
 .divider {
@@ -58,6 +58,7 @@ label {
 
 
 .navbar {
+    // margin-top: 100px;
     background: $front-bg;
     ul {
         font-size: 0;
@@ -65,44 +66,82 @@ label {
         a {
             font-size: 1.1rem;
             margin: 0;
+            // border-left: solid black 1px;
             // text-decoration: none;
         }
         li {
+            background: #fff;
             color: $font-color;
             list-style: none;
             display: inline-block;
             width: 20%;
             text-align: center;
             padding: 7px;
+            // border-left: solid black 1px;
+            // border: 0 solid 1px black;
             &:hover {
-                background: $gray;
+                background: $warriors-blue;
+                color: #fff;
                 // color: $off-white;
             }
+        }
+        .last {
+            // border-right: solid 1px black;
         }
     }
 }
 
 .footer-push {
     min-height: 100vh;
-    margin-bottom: -2rem;
-    background: $warriors-blue;
+    margin-bottom: -3rem;
+    background: #fff;
     &:after {
         content: "";
         display: block;
-        height: 2rem;
+        height: 3rem;
         // background: red;
     }
 }
 
 .footer{
-    font-size: 1rem;
-    height: 2rem;
-    padding: 0.5rem 1rem;
-    text-align: left;
     background: $off-white;
-    color: $font-color;
-    margin-bottom: -15px;
-    .foot-right {
-        float: right;
+    // height: 3rem;
+    padding: .05rem;
+    text-align: center;
+    margin-top: 15px;
+    div {
+        padding: 0 0.5rem;
+        &:first-of-type {
+            padding-top: 0.5rem;
+            text-align: left;
+        }
+        &:last-of-type {
+            padding-bottom: 0.5rem;
+            text-align: right;
+        }
     }
+    .mid a {
+        color: #e6e6e6 !important;
+    }
+    // margin-top: 20px;
+    // font-size: 1rem;
+    // height: 2rem;
+    // padding: 0.5rem 1rem;
+    // text-align: left;
+    // background: $off-white;
+    // color: $font-color;
+    // margin-bottom: -15px;
+    // .foot-right {
+    //     float: right;
+    // }
+}
+
+.foot-center {
+    // margin: auto;
+    text-align: center;
+    width: 100%;
+    background: $front-bg;
+    padding: 0.5rem 1rem;
+    // padding: 0;
+    // margin: 0 -15px;
 }

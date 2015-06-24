@@ -18,6 +18,13 @@ exports.renderSignin = function( req, res ) {
     }
 }
 
+exports.renderSignup = function( req, res ) {
+    res.render( 'signup', {
+        messages: {},
+        admin: true
+    });
+}
+
 exports.renderSignout = function( req, res ) {
     if( req.session.passport.user ) {
         res.render( 'signout', {

@@ -11,30 +11,17 @@
     color: #111; }
 
 html, body {
-  width: 100%;
   height: 100%;
-  background: #bbbdbe; }
+  background: #fff; }
 
 label {
-  color: #eee; }
+  color: #f4f4f5; }
 
 .page-container {
   width: 85%;
   margin: auto;
   position: relative;
   border-radius: 2.5px; }
-  .page-container img {
-    width: 100%;
-    background: #eee; }
-
-.wide-container {
-  font-size: 0;
-  background: #0146ad;
-  margin: -15px;
-  padding: 15px; }
-
-.header-padding {
-  padding-top: 22px; }
 
 .divider {
   width: 100%;
@@ -42,13 +29,14 @@ label {
   background: #43331a; }
 
 .navbar {
-  background: #eee; }
+  background: #f4f4f5; }
   .navbar ul {
     font-size: 0; }
     .navbar ul a {
       font-size: 1.1rem;
       margin: 0; }
     .navbar ul li {
+      background: #fff;
       color: #111;
       list-style: none;
       display: inline-block;
@@ -56,53 +44,72 @@ label {
       text-align: center;
       padding: 7px; }
       .navbar ul li:hover {
-        background: #bbbdbe; }
+        background: #0146ad;
+        color: #fff; }
 
 .footer-push {
   min-height: 100vh;
-  margin-bottom: -2rem;
-  background: #0146ad; }
+  margin-bottom: -3rem;
+  background: #fff; }
   .footer-push:after {
     content: "";
     display: block;
-    height: 2rem; }
+    height: 3rem; }
 
 .footer {
-  font-size: 1rem;
-  height: 2rem;
-  padding: 0.5rem 1rem;
-  text-align: left;
-  background: #eee;
-  color: #111;
-  margin-bottom: -15px; }
-  .footer .foot-right {
-    float: right; }
+  background: #f4f4f5;
+  padding: .05rem;
+  text-align: center;
+  margin-top: 15px; }
+  .footer div {
+    padding: 0 0.5rem; }
+    .footer div:first-of-type {
+      padding-top: 0.5rem;
+      text-align: left; }
+    .footer div:last-of-type {
+      padding-bottom: 0.5rem;
+      text-align: right; }
+  .footer .mid a {
+    color: #e6e6e6 !important; }
+
+.foot-center {
+  text-align: center;
+  width: 100%;
+  background: #f4f4f5;
+  padding: 0.5rem 1rem; }
 
 .content-container {
   width: 100%;
-  background: #0146ad;
-  overflow: auto; }
+  height: 100%;
+  content: "";
+  display: table;
+  clear: both; }
   .content-container .news-elem {
-    margin: 15px;
+    margin-top: 15px;
+    height: 200px;
     width: auto;
-    background: #eee;
+    background: #f4f4f5;
     overflow: hidden;
-    padding-right: 20px;
     position: relative; }
+    .content-container .news-elem .date-right {
+      float: right;
+      font-size: 14px;
+      margin-right: 10px;
+      margin-top: 5px; }
     .content-container .news-elem p {
-      padding: 20px;
+      margin-left: 305px;
       font-size: 2em;
       z-index: 9999; }
-      .content-container .news-elem p .date-right {
-        float: right;
-        font-size: 14px; }
     .content-container .news-elem img {
       float: left;
-      width: 25%;
-      margin: 20px;
-      margin-top: 0px; }
+      height: 200px;
+      width: 300px; }
     .content-container .news-elem .copy {
-      padding-right: 20px; }
+      padding: 20px;
+      margin-left: 300px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-bottom: solid 4px black; }
     .content-container .news-elem .post-remove-edit {
       position: absolute;
       bottom: 15px;
@@ -114,8 +121,6 @@ label {
       clear: both; }
     .content-container .news-elem:hover {
       background-color: #fff; }
-    .content-container .news-elem:first-of-type {
-      margin-top: 0; }
     .content-container .news-elem:last-of-type {
       margin-bottom: 0; }
 
@@ -130,28 +135,88 @@ label {
     background: #ffcd3e; }
 
 .not-carousel {
-  height: 400px;
-  margin: 15px;
+  height: 500px;
   background: #fff;
   position: relative;
   font-size: 0; }
   .not-carousel .elem {
-    width: 16.66%;
+    width: 20%;
     height: 100%;
     background: red;
-    display: inline-block; }
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    filter: saturate(30%);
+    background-size: cover; }
     .not-carousel .elem:hover {
-      background: black; }
+      opacity: 1;
+      filter: saturate(100%); }
+  .not-carousel .elem-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5; }
+    .not-carousel .elem-mask:hover {
+      opacity: 0; }
+  .not-carousel .nce-1 {
+    background: url("../img/tops/one.jpg");
+    background-size: cover;
+    background-position: center; }
+  .not-carousel .nce-2 {
+    background: url("../img/tops/two.jpg");
+    background-size: cover;
+    background-position: center; }
+  .not-carousel .nce-3 {
+    background: url("../img/tops/three.jpg");
+    background-size: cover;
+    background-position: center; }
+  .not-carousel .nce-4 {
+    background: url("../img/tops/four.jpg");
+    background-size: cover;
+    background-position: center; }
+  .not-carousel .nce-5 {
+    background: url("../img/tops/five.jpg");
+    background-size: cover;
+    background-position: center; }
+  .not-carousel .nce-6 {
+    background: url("../img/tops/six.jpg");
+    background-size: cover;
+    background-position: center; }
 
 .staging-main-content-container {
-  width: 85%;
+  width: 80%;
   float: left; }
 
-.ad-column {
-  width: 100px;
+.ad-fuck {
+  width: 20%;
+  border-left: solid 15px white;
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 0; }
+  .ad-fuck img {
+    width: 100%;
+    margin-bottom: 15px; }
+    .ad-fuck img:last-of-type {
+      margin-bottom: 0; }
+  .ad-fuck:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.staging-logo {
   height: 100px;
-  background: green;
-  z-index: 99989; }
+  width: auto;
+  max-width: 100%; }
+
+.tagline {
+  font-size: 2rem;
+  position: absolute;
+  line-height: 100px; }
+
+.news-elem-right {
+  padding: 20px;
+  padding-bottom: 40px; }
 
 textarea {
   padding: 0.25em 0.5em; }
@@ -159,7 +224,7 @@ textarea {
 .new-post-form {
   text-align: center; }
   .new-post-form input {
-    background: #eee;
+    background: #f4f4f5;
     border: none;
     margin: 0.25em;
     border-radius: 1px; }
@@ -189,10 +254,10 @@ textarea {
   background: #0146ad; }
   .new-post-main-content h2, .new-post-main-content h3 {
     text-align: center;
-    color: #eee;
+    color: #f4f4f5;
     margin-bottom: 20px; }
   .new-post-main-content p {
-    color: #eee; }
+    color: #f4f4f5; }
 
 .remove-image {
   width: 40% !important; }
